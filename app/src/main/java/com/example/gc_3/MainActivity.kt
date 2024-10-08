@@ -73,11 +73,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getImageID(card: Board.Card) : Int {
-        when (card) {
-            Board.Card('c', "a") -> return R.drawable.card_clubs_a
-            Board.Card('h', "10") -> return R.drawable.card_hearts_10
-            Board.Card('d', "3") -> return R.drawable.card_diamonds_3
-            else -> return R.drawable.card_back_green
+        var imageName = "card_"
+        when(card.suit) {
+            'c' -> imageName += "clubs_"
+            'd' -> imageName += "diamonds_"
+            's' -> imageName += "spades_"
+            'h' -> imageName += "hearts_"
         }
+        imageName += card.rank
+        resources.getIdentifier(imageName, "type/Drawable", null)
     }
 }

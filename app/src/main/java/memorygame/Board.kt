@@ -4,12 +4,10 @@ class Board( ) {
     //Constructor to create board of different sizes.
     // Assign
 
+    private var suits = arrayOf<Char>('c', 'd', 'h', 's')
+    private val rank = arrayOf<String>("2", "3", "4", "5", "6", "7", "8", "9", "10", "j", "q", "k", "a")
+
     private var cards: Array<Card> = Array<Card>(6) {_ -> Card(' ', "")}
-    private val deck: Array<Card> = arrayOf<Card> (
-        Card('c', "a"),
-        Card('h', "10"),
-        Card('d', "3")
-    )
 
     init{
         for(i in 0.. 2) {
