@@ -11,19 +11,11 @@ class Board( ) {
 
     init{
         for(i in 0.. 2) {
-            cards[2*i] = deck.random()
-            cards[(2*i)+1] = cards[2*i]
-
-
-
-           // var choseCard = deck.random()
-           // var index =
-           // cards[i] = choseCard
+            val card: Card = Card(suits.random(), rank.random())
+            cards[2*1] = card
+            cards[(2*1)+1] = cards[2*1]
         }
         cards.shuffle()
-
-
-
     }
 
     fun getValueAt(index:Int): Card {
